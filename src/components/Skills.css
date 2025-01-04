@@ -1,0 +1,304 @@
+.skills {
+    min-height: 100vh;
+    padding: 2rem;
+    /* background: rgba(255, 255, 255, 0.95); */
+    /* background: rgba(235, 235, 235, 0.966); */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, transparent 100%);
+    transition: background-color 0.5s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.skills h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.skill-name {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Show 2 categories per row */
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.skill-category h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    /* background: #ff9100; */
+    transition: width 0.3s ease;
+}
+
+.skill-list {
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.skill-list.expanded {
+    max-height: 2000px;
+}
+
+.skill-item {
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInRight 0.5s ease forwards;
+}
+
+.skill-name {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.proficiency {
+    font-size: 0.875rem;
+    color: #666;
+    margin-left: 0.5rem;
+}
+
+.progress-bar-container {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: growBar 1s ease forwards;
+}
+
+/* Remove or comment out the old progress bar classes (.progress-bar.programming, etc.) */
+
+/* Replace with these consolidated progress bar classes */
+.progress-bar.languages {
+    background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+}
+
+.progress-bar.data-science {
+    background: linear-gradient(90deg, #4E54C8, #8F94FB);
+}
+
+.progress-bar.frameworks {
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+.progress-bar.design {
+    background: linear-gradient(90deg, #FC466B, #3F5EFB);
+}
+
+.progress-bar.security {
+    background: linear-gradient(90deg, #833ab4, #fd1d1d);
+}
+
+.progress-bar.development {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+/* Remove this section entirely */
+/* Also update dark mode classes to use the same naming */
+.dark-mode .progress-bar.languages,
+.dark-mode .progress-bar.data-science,
+.dark-mode .progress-bar.frameworks,
+.dark-mode .progress-bar.design,
+.dark-mode .progress-bar.security,
+.dark-mode .progress-bar.development {
+    /* Keep the same gradients as light mode */
+    background: inherit;
+}
+
+/* Replace all dark mode progress bar classes with these */
+.dark-mode .progress-bar.languages {
+    background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+}
+
+.dark-mode .progress-bar.data-science {
+    background: linear-gradient(90deg, #4E54C8, #8F94FB);
+}
+
+.dark-mode .progress-bar.frameworks {
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+.dark-mode .progress-bar.design {
+    background: linear-gradient(90deg, #FC466B, #3F5EFB);
+}
+
+.dark-mode .progress-bar.security {
+    background: linear-gradient(90deg, #833ab4, #fd1d1d);
+}
+
+.dark-mode .progress-bar.development {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+.view-more-btn {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background: transparent;
+    border: 2px solid #ff9100;
+    border-radius: 8px;
+    color: #ff9100;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background: #ff9100;
+    color: white;
+}
+
+/* Dark mode styles */
+.dark-mode .skills {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.dark-mode .skill-category {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .view-more-btn {
+    border-color: #ff9100;
+    color: #ff9100;
+}
+
+.dark-mode .view-more-btn:hover {
+    background: #ff9100;
+    color: #000;
+}
+
+/* Remove these dark mode progress bar classes as they're using old names */
+.dark-mode .progress-bar.programming {
+    background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+}
+
+.dark-mode .progress-bar.tools {
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+/* Add these dark mode progress bar classes to match the new naming convention */
+.dark-mode .progress-bar.frameworks {
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+.dark-mode .progress-bar.languages {
+    background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+}
+
+/* New */
+.dark-mode .skills h2,
+.dark-mode .skill-category h3 {
+    color: #fff;
+}
+
+.dark-mode .skill-name {
+    color: #e0e0e0;
+}
+
+.dark-mode .proficiency {
+    color: #e0e0e0;
+}
+
+.dark-mode .skill-category p {
+    color: #e0e0e0;
+}
+
+/* Close New */
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .skills-content {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .skills {
+        padding: 1rem;
+        padding-top: 2rem;
+    }
+
+    .skills h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .skills-content {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+    }
+
+    .skill-list {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills {
+        padding-top: 3.5rem;
+    }
+
+    .skills h2 {
+        font-size: 2rem;
+    }
+
+    .skill-category {
+        padding: 1rem;
+    }
+}
