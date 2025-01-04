@@ -33,12 +33,12 @@ const Contact = () => {
     },
     {
       icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com/theabhiraj",
+      href: "https://twitter.com/itheabhiraj",
       label: "Twitter"
     },
     {
       icon: <Instagram className="w-5 h-5" />,
-      href: "https://instagram.com/theabhiraj",
+      href: "https://instagram.com/itheabhiraj",
       label: "Instagram"
     }
   ];
