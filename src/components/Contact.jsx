@@ -4,10 +4,11 @@ import {
   Mail,
   Phone,
   Linkedin,
-  Github,
   Twitter,
+  Github,
   Instagram
 } from "lucide-react";
+
 
 const Contact = () => {
   const socialLinks = [
@@ -32,13 +33,13 @@ const Contact = () => {
       label: "GitHub"
     },
     {
-      icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com/theabhiraj",
+      icon: <Twitter className="w-5 h-5"/>,
+      href: "https://twitter.com/_AbhirajRathod",
       label: "Twitter"
     },
     {
       icon: <Instagram className="w-5 h-5" />,
-      href: "https://instagram.com/theabhiraj",
+      href: "https://instagram.com/itheabhiraj",
       label: "Instagram"
     }
   ];
