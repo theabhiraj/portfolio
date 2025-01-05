@@ -34,7 +34,7 @@ const Contact = () => {
     },
     {
       icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com/theabhiraj",
+      href: "https://twitter.com/_AbhirajRathod",
       label: "Twitter"
     },
     {
