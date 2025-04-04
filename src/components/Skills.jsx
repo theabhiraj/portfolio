@@ -22,32 +22,34 @@ const Skills = () => {
 
   const skills = {
     "Programming & Scripting Languages": [
-      { name: "Python", proficiency: 90 },
-      { name: "JavaScript", proficiency: 85 },
-      { name: "Java", proficiency: 85 },
-      { name: "C", proficiency: 80 },
-      { name: "C++", proficiency: 75 },
-      { name: "PHP", proficiency: 70 },
-      { name: "Swift", proficiency: 60 },
-      { name: "C#", proficiency: 70 },
+      { name: "Dart", proficiency: 75 },
+      { name: "Flutter", proficiency: 75 },
+      { name: "Python", proficiency: 80 },
       { name: "SQL", proficiency: 80 },
-      { name: "HTML", proficiency: 95 },
-      { name: "CSS", proficiency: 90 }
+      { name: "PHP", proficiency: 80 },
+      { name: "HTML", proficiency: 80 },
+      { name: "CSS", proficiency: 80 },
+      { name: "JavaScript", proficiency: 70 },
+      { name: "Java", proficiency: 70 },
+      { name: "C", proficiency: 75 },
+      { name: "C++", proficiency: 75 },
+      { name: "Swift", proficiency: 60 },
+      { name: "C#", proficiency: 70 }
     ],
     "Data Science & AI": [
       { name: "Machine Learning", proficiency: 50 },
       { name: "Deep Learning", proficiency: 30 },
       { name: "NLP", proficiency: 30 },
       { name: "Computer Vision", proficiency: 30 },
-      { name: "Data Analytics", proficiency: 85 },
-      { name: "Data Visualization", proficiency: 85 },
-      { name: "Statistical Analysis", proficiency: 85 }
+      { name: "Data Analytics", proficiency: 80 },
+      { name: "Data Visualization", proficiency: 80 },
+      { name: "Statistical Analysis", proficiency: 80 }
     ],
     "Tools & Frameworks": [
       { name: "Git", proficiency: 80 },
+      { name: "Firebase", proficiency: 80 },
       { name: "React", proficiency: 75 },
-      { name: "Node.js", proficiency: 70 },
-      { name: "Bootstrap", proficiency: 85 },
+      { name: "Bootstrap", proficiency: 75 },
       { name: "Scrum", proficiency: 30 }
     ],
     "UI/UX Design": [
@@ -55,15 +57,15 @@ const Skills = () => {
       { name: "Wireframing", proficiency: 75 },
       { name: "Prototyping", proficiency: 70 },
       { name: "Design Thinking", proficiency: 80 },
-      { name: "Figma", proficiency: 85 },
+      { name: "Figma", proficiency: 80 },
       { name: "Adobe XD", proficiency: 75 }
     ],
     Cybersecurity: [
-      { name: "Awareness", proficiency: 90 },
+      { name: "Awareness", proficiency: 80 },
       { name: "Other", proficiency: 50 }
     ],
     "Software Development": [
-      { name: "Full-stack Development", proficiency: 85 },
+      { name: "Full-stack Development", proficiency: 80 },
       { name: "Mobile Development", proficiency: 75 },
     ]
   };

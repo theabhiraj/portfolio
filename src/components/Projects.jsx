@@ -4,6 +4,20 @@ import "./Projects.css";
 const Projects = () => {
   const projects = [
     {
+      title: "Number Quest: Puzzle Game",
+      technologies: "Flutter, Dart, Firebase",
+      description:
+        "A sliding puzzle game with multiple grid sizes and unique two-empty-space mechanics. Features include real-time database integration, timer, and hint system.",
+      repoUrl: "https://github.com/theabhiraj/number_quest"
+    },
+    {
+      title: "Shop Management System",
+      technologies: "Flutter, Dart, Firebase",
+      description:
+        "Developed a comprehensive app for shop management including inventory tracking, sales analytics, employee scheduling, expense tracking , and payment processing.",
+      repoUrl: "https://github.com/theabhiraj/shoflutter"
+    },
+    {
       title: "Lottery Management System",
       technologies: "PHP, SQL, Python, HTML, CSS, JavaScript, Bootstrap",
       description:
@@ -68,11 +82,13 @@ const Projects = () => {
           >
             <div className="project-info">
               <h3>{project.title}</h3>
+              
+              <p className="project-description">{project.description}</p>
+
               <div className="technologies">
                 <span className="tech-label">Technologies:</span>
                 <span className="tech-stack">{project.technologies}</span>
               </div>
-              <p className="project-description">{project.description}</p>
               <div className="project-links">
                 {/* <button className="view-demo">View Demo</button> */}
                 {/* <button className="view-code">View Code</button> */}

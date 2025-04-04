@@ -4,14 +4,10 @@ import "../styles/theme.css";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    }
-    return false;
-  });
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
+    document.documentElement.classList.add("dark-mode");
     const darkModeMediaQuery = window.matchMedia(
       "(prefers-color-scheme: dark)"
     );
@@ -41,7 +37,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <a href="" className="logo">
+        <a href="/" className="logo">
           <span className="logo-text">Abhiraj R.</span>
         </a>
 
