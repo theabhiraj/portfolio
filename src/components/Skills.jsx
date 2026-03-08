@@ -122,8 +122,12 @@ const Skills = () => {
                           duration: 1,
                           delay: 0.2 + index * 0.1
                         }}
+                        // style={{ 
+                        //   width: `${item.proficiency}%`
+                        // }}
                         style={{ 
-                          width: `${item.proficiency}%`
+                          width: `${item.proficiency}%`,
+                          background: getProgressBarColor(category)
                         }}
                       />
                     </div>

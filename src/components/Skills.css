@@ -115,9 +115,10 @@
     height: 100%;
     border-radius: 4px;
     transform-origin: left;
-    transform: scaleX(0);
-    animation: growBar 1s ease forwards;
+    /* transform: scaleX(0);
+    animation: growBar 1s ease forwards; */
 }
+
 
 /* Remove or comment out the old progress bar classes (.progress-bar.programming, etc.) */
 
