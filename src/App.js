@@ -1,21 +1,20 @@
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-
+import Home from './pages/Home';
+import ProjectsPage from './pages/ProjectsPage';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-    </div>
+    <Router basename={process.env.NODE_ENV === 'production' ? '/portfolio' : '/'}>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

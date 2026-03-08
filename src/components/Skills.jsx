@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import "./Skills.css";
 
@@ -8,65 +8,42 @@ const Skills = () => {
   // Updated category mapping for progress bars
   const getProgressBarClass = (category) => {
     const categoryMap = {
-      "Programming & Scripting Languages": "languages",
-      "Data Science & AI": "data-science",
-      "Tools & Frameworks": "frameworks",
-      "UI/UX Design": "design",
-      Cybersecurity: "security",
-      "Software Development": "development"
+      "Software Development": "development",
+      "Languages & Frameworks": "languages",
+      "UI/UX Design": "design"
     };
     return categoryMap[category] || "languages";
+  };
+
+  // Get background color for inline style fallback
+  const getProgressBarColor = (category) => {
+    const colorMap = {
+      "Software Development": "linear-gradient(90deg, #0072ff, #00c6ff)",
+      "Languages & Frameworks": "linear-gradient(90deg, #FF6B6B, #FF8E53)",
+      "UI/UX Design": "linear-gradient(90deg, #FC466B, #3F5EFB)"
+    };
+    return colorMap[category] || "linear-gradient(90deg, #FF6B6B, #FF8E53)";
   };
 
   const initialSkillsCount = window.innerWidth <= 768 ? 3 : 5;
 
   const skills = {
-    "Programming & Scripting Languages": [
-      { name: "Dart", proficiency: 75 },
-      { name: "Flutter", proficiency: 75 },
-      { name: "Python", proficiency: 80 },
-      { name: "SQL", proficiency: 80 },
-      { name: "PHP", proficiency: 80 },
-      { name: "HTML", proficiency: 80 },
-      { name: "CSS", proficiency: 80 },
-      { name: "JavaScript", proficiency: 70 },
-      { name: "Java", proficiency: 70 },
-      { name: "C", proficiency: 75 },
-      { name: "C++", proficiency: 75 },
-      { name: "Swift", proficiency: 60 },
-      { name: "C#", proficiency: 70 }
+    "Software Development": [
+      { name: "Full-stack Development", proficiency: 85 },
+      { name: "Mobile Development", proficiency: 90 },
+      { name: "Web Development", proficiency: 90 },
     ],
-    "Data Science & AI": [
-      { name: "Machine Learning", proficiency: 50 },
-      { name: "Deep Learning", proficiency: 30 },
-      { name: "NLP", proficiency: 30 },
-      { name: "Computer Vision", proficiency: 30 },
-      { name: "Data Analytics", proficiency: 80 },
-      { name: "Data Visualization", proficiency: 80 },
-      { name: "Statistical Analysis", proficiency: 80 }
-    ],
-    "Tools & Frameworks": [
-      { name: "Git", proficiency: 80 },
-      { name: "Firebase", proficiency: 80 },
-      { name: "React", proficiency: 75 },
-      { name: "Bootstrap", proficiency: 75 },
-      { name: "Scrum", proficiency: 30 }
+    "Languages & Frameworks": [
+      { name: "Flutter & Dart", proficiency: 85 },
+      { name: "React & Next.js", proficiency: 75 },
+      { name: "Python", proficiency: 70 },
+      { name: "PHP", proficiency: 70 }
     ],
     "UI/UX Design": [
       { name: "User Research", proficiency: 70 },
       { name: "Wireframing", proficiency: 75 },
       { name: "Prototyping", proficiency: 70 },
-      { name: "Design Thinking", proficiency: 80 },
-      { name: "Figma", proficiency: 80 },
-      { name: "Adobe XD", proficiency: 75 }
-    ],
-    Cybersecurity: [
-      { name: "Awareness", proficiency: 80 },
-      { name: "Other", proficiency: 50 }
-    ],
-    "Software Development": [
-      { name: "Full-stack Development", proficiency: 80 },
-      { name: "Mobile Development", proficiency: 75 },
+      { name: "Design Thinking", proficiency: 80 }
     ]
   };
 
@@ -145,7 +122,9 @@ const Skills = () => {
                           duration: 1,
                           delay: 0.2 + index * 0.1
                         }}
-                        style={{ width: `${item.proficiency}%` }}
+                        style={{ 
+                          width: `${item.proficiency}%`
+                        }}
                       />
                     </div>
                   </motion.li>

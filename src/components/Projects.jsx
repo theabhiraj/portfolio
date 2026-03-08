@@ -1,72 +1,108 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { ref, onValue } from "firebase/database";
+import { database } from "../firebase";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 import "./Projects.css";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Number Quest: Puzzle Game",
-      technologies: "Flutter, Dart, Firebase",
-      description:
-        "A sliding puzzle game with multiple grid sizes and unique two-empty-space mechanics. Features include real-time database integration, timer, and hint system.",
-      repoUrl: "https://github.com/theabhiraj/number_quest"
-    },
-    {
-      title: "Shop Management System",
-      technologies: "Flutter, Dart, Firebase",
-      description:
-        "Developed a comprehensive app for shop management including inventory tracking, sales analytics, employee scheduling, expense tracking , and payment processing.",
-      repoUrl: "https://github.com/theabhiraj/shoflutter"
-    },
-    {
-      title: "Lottery Management System",
-      technologies: "PHP, SQL, Python, HTML, CSS, JavaScript, Bootstrap",
-      description:
-        "Designed a secure platform to automate ticket sales, results, and payment processing for local lottery systems. Features include user authentication, ticket generation, and automated winner selection.",
-      repoUrl: "https://github.com/theabhiraj?tab=repositories"
-    },
-    {
-      title: "Smartphone Buy & Sell WebApp",
-      technologies: "PHP, SQL, Python, HTML, CSS, JavaScript, Bootstrap",
-      description:
-        "Built an intuitive platform for smartphone transactions with price comparison tools, automated market value estimation, and secure payment integration.",
-      repoUrl: "https://github.com/theabhiraj?tab=repositories"
-    },
-    {
-      title: "Shop Management WebApp",
-      technologies: "HTML, CSS, JavaScript, PHP, MySQL, Python",
-      description:
-        "Developed a comprehensive tool for retail management including inventory tracking, sales analytics, employee scheduling, and payment processing.",
-      repoUrl: "https://github.com/theabhiraj?tab=repositories"
-    },
-    {
-      title: "Tournament Website",
-      technologies: "HTML, CSS, JavaScript, PHP, MySQL, Python",
-      description:
-        "Created a tournament management platform with features for player registration, bracket generation, real-time score updates, and scheduling.",
-      repoUrl: "https://github.com/theabhiraj?tab=repositories"
-    },
-    {
-      title: "Jewellery Website",
-      technologies: "PHP, SQL, Python, HTML, CSS, JavaScript, Bootstrap",
-      description:
-        "Designed an elegant e-commerce platform for jewellery retail featuring product categorization, dynamic pricing, and high-resolution image galleries.",
-      repoUrl: "https://github.com/theabhiraj?tab=repositories"
-    },
-    {
-      title: "E-Learning Website",
-      technologies: "PHP, SQL, Python, HTML, CSS, JavaScript, APIs",
-      description:
-        "Built an educational platform with features for course management, progress tracking, assignment submission, and interactive learning materials.",
-      repoUrl: "https://github.com/theabhiraj?tab=repositories"
-    },
-    {
-      title: "Portfolio Projects",
-      technologies: "HTML, CSS, JavaScript, Bootstrap, PHP, SQL, Python",
-      description:
-        "Collection of personal and academic projects showcasing web development skills and creative problem-solving abilities.",
-      repoUrl: "https://github.com/theabhiraj?tab=repositories"
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showContactPopup, setShowContactPopup] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    const projectsRef = ref(database, 'projects');
+    
+    const unsubscribe = onValue(
+      projectsRef,
+      (snapshot) => {
+        try {
+          const data = snapshot.val();
+          if (data) {
+            // Convert object to array if needed, or use directly if it's already an array
+            const projectsArray = Array.isArray(data) ? data : Object.values(data);
+            setProjects(projectsArray);
+          } else {
+            setProjects([]);
+          }
+          setLoading(false);
+        } catch (err) {
+          setError("Failed to load projects");
+          setLoading(false);
+        }
+      },
+      (err) => {
+        setError("Failed to connect to database");
+        setLoading(false);
+      }
+    );
+
+    return () => unsubscribe();
+  }, []);
+
+  // Lock body scroll when modal or popup is open
+  useEffect(() => {
+    if (selectedProject || showContactPopup) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
-  ];
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProject, showContactPopup]);
+
+  const handleGetCode = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    console.log('Get Code clicked');
+    setShowContactPopup(true);
+  };
+
+  const handleCardClick = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeProjectModal = () => {
+    setSelectedProject(null);
+  };
+
+  const handleContactOption = (platform) => {
+    const contactLinks = {
+      linkedin: "https://www.linkedin.com/in/theabhiraj/",
+      instagram: "https://instagram.com/itheabhiraj",
+      gmail: "mailto:theabhiraj.in@gmail.com"
+    };
+    window.open(contactLinks[platform], "_blank");
+    setShowContactPopup(false);
+  };
+
+  if (loading) {
+    return (
+      <section id="projects" className="projects">
+        <h2>Projects</h2>
+        <div className="projects-content">
+          <p style={{ textAlign: 'center', padding: '2rem' }}>Loading projects...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section id="projects" className="projects">
+        <h2>Projects</h2>
+        <div className="projects-content">
+          <p style={{ textAlign: 'center', padding: '2rem', color: 'red' }}>{error}</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="projects" className="projects">
@@ -80,28 +116,110 @@ const Projects = () => {
               "--animation-delay": `${index * 0.1}s`
             }}
           >
-            <div className="project-info">
+            <div className="project-info" onClick={() => handleCardClick(project)}>
               <h3>{project.title}</h3>
               
-              <p className="project-description">{project.description}</p>
+              <p className="project-description">
+                {project.description && project.description.length > 50 
+                  ? project.description.substring(0, 50) + '...' 
+                  : project.description}
+              </p>
+
+              {project.period && (
+                <div className="project-period">
+                  <span className="period-label">Period:</span>
+                  <span className="period-text">{project.period}</span>
+                </div>
+              )}
 
               <div className="technologies">
-                <span className="tech-label">Technologies:</span>
-                <span className="tech-stack">{project.technologies}</span>
-              </div>
-              <div className="project-links">
-                {/* <button className="view-demo">View Demo</button> */}
-                {/* <button className="view-code">View Code</button> */}
-                <button
-                  className="view-code"
-                  onClick={() => window.open(project.repoUrl, "_blank")}>
-                  View Code
-                </button>
+                <span className="tech-label">Tech:</span>
+                <span className="tech-stack">
+                  {(() => {
+                    const techText = Array.isArray(project.skills) 
+                      ? project.skills.slice(0, 2).join(", ")
+                      : (project.technologies || "N/A");
+                    return techText.length > 40 ? techText.substring(0, 40) + '...' : techText;
+                  })()}
+                </span>
               </div>
             </div>
+            
+            <button
+              className="card-get-code-btn"
+              onClick={handleGetCode}
+            >
+              Get Code
+            </button>
           </div>
         ))}
       </div>
+
+      {selectedProject && (
+        <div className="project-modal-overlay" onClick={closeProjectModal}>
+          <div className="project-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={closeProjectModal}>×</button>
+            <h2>{selectedProject.title}</h2>
+            
+            <div className="modal-content">
+              <p className="modal-description">{selectedProject.description}</p>
+
+              {selectedProject.period && (
+                <div className="modal-section">
+                  <h4>Period</h4>
+                  <p>{selectedProject.period}</p>
+                </div>
+              )}
+
+              <div className="modal-section">
+                <h4>Technologies</h4>
+                <div className="modal-tech-tags">
+                  {(Array.isArray(selectedProject.skills) 
+                    ? selectedProject.skills 
+                    : (selectedProject.technologies || "").split(", ")
+                  ).map((tech, idx) => (
+                    <span key={idx} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showContactPopup && (
+        <div className="contact-popup-overlay" onClick={() => setShowContactPopup(false)}>
+          <div className="contact-popup" onClick={(e) => e.stopPropagation()}>
+            <button className="close-popup" onClick={() => setShowContactPopup(false)}>×</button>
+            <h3>Connect With Me</h3>
+            <div className="contact-options">
+              <button 
+                className="contact-option linkedin"
+                onClick={() => handleContactOption('linkedin')}
+              >
+                <Linkedin className="contact-icon" />
+                <span>LinkedIn</span>
+              </button>
+              <button 
+                className="contact-option instagram"
+                onClick={() => handleContactOption('instagram')}
+              >
+                <Instagram className="contact-icon" />
+                <span>Instagram</span>
+              </button>
+              <button 
+                className="contact-option gmail"
+                onClick={() => handleContactOption('gmail')}
+              >
+                <Mail className="contact-icon" />
+                <span>Gmail</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
