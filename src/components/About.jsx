@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./About.css";
-import AbhirajPhoto from "../assets/images/AbhirajPhoto.jpg";
+import AbhirajPhoto from "../assets/images/Abhiraj_Photo.jpg";
 
 const About = () => {
   return (
