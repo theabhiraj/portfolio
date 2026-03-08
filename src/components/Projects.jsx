@@ -22,7 +22,21 @@ const Projects = () => {
           if (data) {
             // Convert object to array if needed, or use directly if it's already an array
             const projectsArray = Array.isArray(data) ? data : Object.values(data);
-            setProjects(projectsArray);
+            
+            // Sort projects by period (newest first)
+            const sortedProjects = projectsArray.sort((a, b) => {
+              const getEndDate = (period) => {
+                if (!period) return new Date(0);
+                // Extract end date from period string (e.g., "Apr 2024 - Apr 2024" or "Nov 2025 - Dec 2025")
+                const parts = period.split(' - ');
+                const endDateStr = parts[1] || parts[0];
+                return new Date(endDateStr);
+              };
+              
+              return getEndDate(b.period) - getEndDate(a.period);
+            });
+            
+            setProjects(sortedProjects);
           } else {
             setProjects([]);
           }
@@ -85,7 +99,7 @@ const Projects = () => {
   if (loading) {
     return (
       <section id="projects" className="projects">
-        <h2>Projects</h2>
+        <h2>   </h2>
         <div className="projects-content">
           <p style={{ textAlign: 'center', padding: '2rem' }}>Loading projects...</p>
         </div>
@@ -96,7 +110,7 @@ const Projects = () => {
   if (error) {
     return (
       <section id="projects" className="projects">
-        <h2>Projects</h2>
+        <h2>   </h2>
         <div className="projects-content">
           <p style={{ textAlign: 'center', padding: '2rem', color: 'red' }}>{error}</p>
         </div>
@@ -106,7 +120,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects">
-      <h2>Projects</h2>
+      <h2>   </h2>
       <div className="projects-content">
         {projects.map((project, index) => (
           <div

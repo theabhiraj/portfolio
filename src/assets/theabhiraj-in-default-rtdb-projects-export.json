@@ -1,0 +1,296 @@
+[
+  {
+    "description": "Built a highly customizable alarm system using Flutter, integrating math challenges, photo verification, shake detection, and fallback scheduling to guarantee consistent alarm triggers across Android devices.",
+    "period": "Apr 2024 - Apr 2024",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Android",
+      "Sensors API"
+    ],
+    "title": "xAlarm: Smart Alarm App with Action-Driven Wake Mechanisms"
+  },
+  {
+    "description": "Built a simplified Cashify-style platform enabling users to sell and buy used smartphones with condition-based pricing, device verification, and secure order flow. Implemented product listings, inspection steps, user authentication, and responsive UI for a smooth recommerce experience.",
+    "period": "Sep 2024 - Sep 2024",
+    "skills": [
+      "PHP",
+      "MySQL",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "title": "SellNBuy: Pre-Owned Device Marketplace with Smart Pricing & Inspection Workflow"
+  },
+  {
+    "description": "Built a Firebase-integrated POS admin app using Flutter, featuring inventory management, barcode-based product entry, billing, customer/employee modules, and real-time stock tracking. Designed a clean admin UI with analytics, reports, and expense management for streamlined store operations.",
+    "period": "Oct 2024 - Oct 2024",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Barcode Scanning",
+      "POS Systems"
+    ],
+    "title": "xShop: Flutter-Based POS & Shop Management System"
+  },
+  {
+    "description": "Developed a modern full-stack YouTube downloader using React, Node.js, ytdl-core, and FFmpeg, enabling fast MP3/MP4 downloads with real-time progress tracking. Implemented a clean responsive UI and optimized backend processing for seamless, high-performance media conversions.",
+    "period": "Nov 2024 - Nov 2024",
+    "skills": [
+      "React.js",
+      "Node.js",
+      "JavaScript",
+      "FFmpeg",
+      "ytdl-core"
+    ],
+    "title": "YouTube Downloader: Full-Stack Video & Audio Download Web App"
+  },
+  {
+    "description": "Created a Flutter app that lets users generate unique stories across multiple genres using Google's Gemini AI, with adjustable creativity levels and story lengths. Designed an intuitive, responsive interface with real-time progress, local history management, export options, and built-in content moderation for a safe, seamless storytelling experience.",
+    "period": "Nov 2024 - Nov 2024",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Google Gemini API",
+      "AI/ML"
+    ],
+    "title": "Subrosa Stories: AI-Powered Story Generation App with Flutter"
+  },
+  {
+    "description": "Built a modern React-based QR generator with style customization, color themes, and user authentication for saving and managing generated codes. Designed a clean, responsive UI and deployed the application on GitHub Pages for seamless accessibility.",
+    "period": "Jan 2025 - Jan 2025",
+    "skills": [
+      "React.js",
+      "JavaScript",
+      "QR Code Generation",
+      "GitHub Pages"
+    ],
+    "title": "TH-QR Generator"
+  },
+  {
+    "description": "Developed a comprehensive visitor management platform evolving from a basic Flask-powered system to a secure, multi-tenant application. Features include visitor entry, photo capture, ID validation, real-time checkout, CSV export, and analytics. Final iteration implemented admin-only user provisioning, email/password authentication, and full data isolation using Supabase RLS with a responsive React interface.",
+    "period": "Aug 2024 - Feb 2025",
+    "skills": [
+      "Python",
+      "React.js",
+      "Flask",
+      "Supabase",
+      "HTML",
+      "CSS",
+      "CSV Processing"
+    ],
+    "title": "Visitor Entry Management System"
+  },
+  {
+    "description": "Built an AI tool to read PDFs, chunk content, and answer questions using language models.",
+    "period": "Mar 2025 - Mar 2025",
+    "skills": [
+      "Python",
+      "Jupyter Notebook",
+      "PyPDF2",
+      "AI/ML",
+      "NLP"
+    ],
+    "title": "AI Doubt Resolution Assistant"
+  },
+  {
+    "description": "Built a Flutter application that lets users log in, add YouTube channels, and view all videos, shorts, and updates in one place, mimicking a subscription feed. Integrated YouTube API to fetch real-time content, helping users save time while staying updated on their favorite channels.",
+    "period": "Jul 2025 - Jul 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "YouTube API",
+      "API Integration"
+    ],
+    "title": "MyTube: Personalized YouTube Subscription Tracker"
+  },
+  {
+    "description": "Flutter app that delivers quick, concise, and detailed AI-powered YouTube video summaries using Google Gemini AI, with transcription handled via Colab Notebook.",
+    "period": "Aug 2025 - Aug 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Python",
+      "Google Gemini API",
+      "YouTube API",
+      "AI/ML"
+    ],
+    "title": "AI-Powered YouTube Video Summarizer"
+  },
+  {
+    "description": "Developed a React web app that detects whether an image is AI-generated or human-made using the AI or Not API, providing confidence scores in real time. Built a clean, responsive interface with drag-and-drop uploads, error handling, and support for multiple image formats.",
+    "period": "Aug 2025 - Sep 2025",
+    "skills": [
+      "React.js",
+      "AI/ML",
+      "API Integration",
+      "Image Processing"
+    ],
+    "title": "SpyImage: React-Based AI vs Human Image Detection Tool"
+  },
+  {
+    "description": "Number Quest Puzzles is an engaging sliding puzzle game that challenges your mind and reflexes with every move.",
+    "period": "Apr 2025 - Sep 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Game Development"
+    ],
+    "title": "Number Quest: Puzzle Challenge"
+  },
+  {
+    "description": "Built a Flutter application with a FastAPI backend to send, receive, and track WhatsApp messages using Meta's WhatsApp Cloud API. Integrated Firebase Realtime Database for cloud sync, webhooks for real-time updates, and local storage as backup for reliable message management.",
+    "period": "Sep 2025 - Sep 2025",
+    "skills": [
+      "Python",
+      "Flutter",
+      "Dart",
+      "FastAPI",
+      "WhatsApp Cloud API",
+      "Firebase",
+      "Webhooks"
+    ],
+    "title": "WhatsApp Business Manager: Flutter + FastAPI Integration"
+  },
+  {
+    "description": "A dynamic resume builder with AI-powered parsing, multiple professional templates, and inline editing features, optimized for responsive design and high-quality PDF generation.",
+    "period": "Sep 2025 - Sep 2025",
+    "skills": [
+      "React.js",
+      "Python",
+      "AI/ML",
+      "PDF Generation"
+    ],
+    "title": "Resume Maker – React Application"
+  },
+  {
+    "description": "Developed a professional browser extension using React that allows users to control video playback speed via popup UI and keyboard shortcuts. Features include real-time speed adjustments, multi-video detection, persistent settings, and cross-site compatibility for YouTube, Netflix, Vimeo, and more.",
+    "period": "Sep 2025 - Sep 2025",
+    "skills": [
+      "React.js",
+      "Chrome Extension API",
+      "JavaScript",
+      "DOM Manipulation"
+    ],
+    "title": "Playback: Chrome/Edge Extension for Advanced Video Speed Control"
+  },
+  {
+    "description": "A React + Vite Chrome extension for high-quality screen recording with real-time keyboard overlays, optional audio, and cursor tracking. Features minimal CPU usage, auto-saving, and modern UI for seamless user experience on Chromium-based browsers.",
+    "period": "Sep 2025 - Sep 2025",
+    "skills": [
+      "React.js",
+      "Vite",
+      "Chrome Extension API",
+      "Screen Recording",
+      "JavaScript"
+    ],
+    "title": "Chrome Extension for Screen & Keyboard Recording"
+  },
+  {
+    "description": "A Flutter-based word puzzle game with offline and online modes, progressive difficulty levels, and Firebase-powered leaderboards. Features a saffron-themed UI, smooth animations, cross-platform support, and monetization via Google Mobile Ads.",
+    "period": "May 2025 - Oct 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Google Mobile Ads",
+      "Game Development"
+    ],
+    "title": "WordFinder Challenge: Cross-Platform Word Puzzle Game"
+  },
+  {
+    "description": "An intelligent nutrition tracking app built with Flutter and Firebase, leveraging Google Gemini API to analyze meals from photos and provide personalized calorie and macro targets. Features secure authentication, onboarding wizard, real-time BMR/TDEE calculations, and a responsive, user-friendly interface for Android.",
+    "period": "Jul 2025 - Oct 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Google Gemini API",
+      "AI/ML"
+    ],
+    "title": "AI-Powered Nutrition & Health Tracker"
+  },
+  {
+    "description": "TTKid is a fun, interactive early-learning app for toddlers (ages 2–3). With colorful visuals, real sounds, and playful activities, it turns learning into an enjoyable experience. Kids explore alphabets, numbers, animals, colors, shapes, and basic music through phonics, real photos, and simple interactions. They can play matching games, memory challenges, jigsaw puzzles, coloring pages, and quick quizzes that boost focus and creativity.",
+    "period": "Jul 2025 - Oct 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Educational App Development",
+      "UI/UX Design"
+    ],
+    "title": "TTKid: Fun Learning Games for Toddlers"
+  },
+  {
+    "description": "A home layout design app built with Flutter (Android) and React (Web), enabling drag-and-drop room and element placement with zoom, pan, and real-time property editing. Supports high-quality image export, offline usage, and responsive design across mobile, tablet, and desktop.",
+    "period": "Oct 2025 - Oct 2025",
+    "skills": [
+      "React.js",
+      "Flutter",
+      "Dart",
+      "Drag-and-Drop",
+      "Canvas API"
+    ],
+    "title": "d2Home / RAB's HomeLogo: Home Design App"
+  },
+  {
+    "description": "A Next.js web app for client-side resizing and format conversion of images and PDFs, featuring Firebase authentication, credit-based usage, drag-and-drop uploads, and mobile-first responsive design. All processing occurs locally, ensuring privacy, speed, and offline capability.",
+    "period": "Oct 2025 - Oct 2025",
+    "skills": [
+      "Next.js",
+      "React.js",
+      "Firebase",
+      "Image Processing",
+      "PDF Processing"
+    ],
+    "title": "ResizerX – Next.js Image & PDF Processing Web App"
+  },
+  {
+    "description": "A Flutter-based Android app that lets users earn real money by watching rewarded ads, with secure Firebase authentication, offline-first ad caching, real-time balance tracking, and UPI-based withdrawals. Features a saffron-themed UI, smart connectivity, and detailed ad history tracking.",
+    "period": "Oct 2025 - Oct 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Google Mobile Ads",
+      "UPI Integration"
+    ],
+    "title": "AdShare – Flutter App for Earning Rewards via Ads"
+  },
+  {
+    "description": "Developed a modern Flutter-based note-taking app with offline-first architecture, real-time Firebase sync, and Google Sign-In. Implemented auto-save, PDF export, categorization, and dark mode for a seamless, cross-device user experience.",
+    "period": "Oct 2025 - Nov 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Firebase"
+    ],
+    "title": "BusyNotes: Offline-First Note-Taking App with Real-Time Sync"
+  },
+  {
+    "description": "An Android-only Flutter app for managing multiple shopping lists offline, featuring item details, progress tracking, and SQLite-based local storage. Offers Material Design 3 UI, intuitive swipe actions, and seamless list management without internet connectivity.",
+    "period": "Nov 2025 - Nov 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "SQLite",
+      "Material Design 3"
+    ],
+    "title": "Shopping List Manager: Offline Android App"
+  },
+  {
+    "description": "Built a Flutter app combining Google Calendar and Google Tasks for unified event and task management. Implemented Google Sign-In, real-time sync, home screen widgets, and intuitive calendar/task views to streamline scheduling and productivity.",
+    "period": "Nov 2025 - Dec 2025",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Google Sign-In",
+      "Google Calendar API",
+      "Google Tasks API",
+      "Real-time Sync"
+    ],
+    "title": "Cal Todo: Integrated Calendar & Task Management App"
+  }
+]
